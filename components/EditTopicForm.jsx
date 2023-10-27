@@ -7,7 +7,7 @@ export default function EditTopicForm({ id, title, description, school, telNumbe
     const [newTitle, setNewTitle] = useState(title);
     const [newDescription, setNewDescription] = useState(description);
     const [newSchool, setNewSchool] = useState(school);
-    const [telNumber, setNewtelNumber] = useState(telNumber);
+    const [newtelNumber, setNewtelNumber] = useState(telNumber);
     const [darsQoldirish, setNewdarsQoldirish] = useState(darsQoldirish);
 
     const router = useRouter();
@@ -23,7 +23,7 @@ export default function EditTopicForm({ id, title, description, school, telNumbe
                 headers: {
                     "Content-type": "application/json",
                 },
-                body: JSON.stringify({ newTitle, newDescription, newSchool, telNumber, darsQoldirish }),
+                body: JSON.stringify({ newTitle, newDescription, newSchool, newtelNumber, darsQoldirish }),
             })
                 .then((res) => {
                     if (!res.ok) {
@@ -66,7 +66,7 @@ export default function EditTopicForm({ id, title, description, school, telNumbe
             />
             <input
                 onChange={(e) => setNewtelNumber(e.target.value)}
-                value={telNumber}
+                value={newtelNumber}
                 className="border border-slate-500 px-8 py-2"
                 type="text"
                 placeholder="telNumber"
